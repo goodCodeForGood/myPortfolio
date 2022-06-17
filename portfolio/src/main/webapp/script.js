@@ -31,3 +31,12 @@ function addRandomFact() {
   const factContainer = document.getElementById('fact-container');
   factContainer.innerText = fact;
 }
+
+/** Fetches the current date from the server and adds it to the page. */
+async function showServerNoun() {
+    const responseFromServer = await fetch('/hello');
+    const textFromResponse = await responseFromServer.text();
+  
+    const dateContainer = document.getElementById('noun-container');
+    dateContainer.innerText = textFromResponse;
+}
