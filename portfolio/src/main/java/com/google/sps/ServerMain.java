@@ -17,7 +17,7 @@ public class ServerMain {
 
   public static void main(String[] args) throws Exception {
 
-    // Create a server that listens on port 8080.
+    // Create a server that listens on port 8080. // 8080 was not working: gave 503 and 403 errors
     Server server = new Server(8080);
     WebAppContext webAppContext = new WebAppContext();
     server.setHandler(webAppContext);
