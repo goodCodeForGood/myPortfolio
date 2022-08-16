@@ -38,13 +38,13 @@ function addRandomFact() {
 // from the same "hello" webservlet. or would i have to create a new/another
 // webservlet to fetch from, for one of these fns.
 
-// async function showServerNoun() {
-//     const responseFromServer = await fetch('/hello');
-//     const textFromResponse = await responseFromServer.text();
+async function showServerNoun() {
+    const responseFromServer = await fetch('/hello');
+    const textFromResponse = await responseFromServer.text();
   
-//     const dateContainer = document.getElementById('noun-container');
-//     dateContainer.innerText = textFromResponse;
-// }
+    const dateContainer = document.getElementById('noun-container');
+    dateContainer.innerText = textFromResponse;
+}
 
 async function getServerMessages() {
     const responseFromServer = await fetch('/hello');
@@ -59,6 +59,19 @@ async function getServerMessages() {
         createListElement(myObject[Math.floor(Math.random() * myObject.messages.length)]));
 
     return messagesListElement;
+  }
+
+  async function getRandomServerText() {
+    const responseFromServer = await fetch('/hello');
+    const myObject = await responseFromServer.json();
+  
+    const messagesListElement = document.getElementById('hello-container');
+    messagesListElement.innerHTML = '';
+  
+    console.log(myObject.text);
+
+    messagesListElement.appendChild(
+        createListElement(myObject.text[Math.floor(Math.random() * myObject.text.length)]));
   }
   
   /** Creates an <li> element containing text. */

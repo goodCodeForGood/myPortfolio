@@ -1,4 +1,5 @@
-package main.java.data;
+package data;
+
 // package com.google.sps.data;
 
 public final class HelloWorld {
