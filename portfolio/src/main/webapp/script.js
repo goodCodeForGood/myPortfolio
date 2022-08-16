@@ -67,10 +67,8 @@ async function getServerMessages() {
   }
 
   function requestTranslation() {
-      // instead of .getElementById('text').value, use .getElementById('text').innerText becuase
-      // this element "does not have a "value" attribute"
     const text = document.getElementById('text').innerText;
-    const languageCode = document.getElementById('language').innerText; // same here
+    const languageCode = document.getElementById('language').innerText;
 
     const resultContainer = document.getElementById('result');
     resultContainer.innerText = 'Loading...';
