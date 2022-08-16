@@ -20,7 +20,6 @@ function addRandomFact() {
     'Software Engineering was a career that I considered to pursue from my childhood itself :)'];
 
   const fact = facts[Math.floor(Math.random() * facts.length)];
-
   const factContainer = document.getElementById('fact-container');
   factContainer.innerText = fact;
 }
