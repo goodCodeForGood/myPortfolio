@@ -1,5 +1,3 @@
-// correct .js file
-
 // Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 
 function addRandomFact() {
     const facts =
@@ -42,12 +39,25 @@ async function getServerMessages() {
     const messagesListElement = document.getElementById('hello-container');
     messagesListElement.innerHTML = '';
   
-    console.log(myObject);
+    console.log(myObject.text);
 
     messagesListElement.appendChild(
         createListElement(myObject[Math.floor(Math.random() * myObject.messages.length)]));
 
     return messagesListElement;
+  }
+
+  async function getRandomServerText() {
+    const responseFromServer = await fetch('/hello');
+    const myObject = await responseFromServer.json();
+  
+    const messagesListElement = document.getElementById('hello-container');
+    messagesListElement.innerHTML = '';
+  
+    console.log(myObject.text);
+
+    messagesListElement.appendChild(
+        createListElement(myObject.text[Math.floor(Math.random() * myObject.text.length)]));
   }
   
   function createListElement(text) {
