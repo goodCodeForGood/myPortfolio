@@ -12,10 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 function addRandomFact() {
-//   const greetings =
-//       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
     const facts =
       ['I was on my school badminton team.', 
       'AP Computer Science A was one of my favorite subjects in high school :)', 
@@ -24,19 +21,9 @@ function addRandomFact() {
 
   const fact = facts[Math.floor(Math.random() * facts.length)];
 
-  // Add it to the page.
   const factContainer = document.getElementById('fact-container');
   factContainer.innerText = fact;
 }
-
-// Both the asynch fns: "showServerNoun" and "getServerMessages" are fetching 
-// from the same webseervlet called "hello" from the servlet file. I commented out
-// lines related to showServerNoun, so it doesn't show the hardcoded hello text 
-// anymore. Instead both the fns point to the same random message json strings
-
-// so is it possible to have both these fns work correctly even though they fetch
-// from the same "hello" webservlet. or would i have to create a new/another
-// webservlet to fetch from, for one of these fns.
 
 async function showServerNoun() {
     const responseFromServer = await fetch('/hello');
@@ -74,7 +61,6 @@ async function getServerMessages() {
         createListElement(myObject.text[Math.floor(Math.random() * myObject.text.length)]));
   }
   
-  /** Creates an <li> element containing text. */
   function createListElement(text) {
     const liElement = document.createElement('li');
     liElement.innerText = text;
