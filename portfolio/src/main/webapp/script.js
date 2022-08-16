@@ -65,3 +65,25 @@ async function getServerMessages() {
     liElement.innerText = text;
     return liElement;
   }
+
+  function requestTranslation() {
+      // instead of .getElementById('text').value, use .getElementById('text').innerText becuase
+      // this element "does not have a "value" attribute"
+    const text = document.getElementById('text').innerText;
+    const languageCode = document.getElementById('language').innerText; // same here
+
+    const resultContainer = document.getElementById('result');
+    resultContainer.innerText = 'Loading...';
+
+    const params = new URLSearchParams();
+    params.append('text', text);
+    params.append('languageCode', languageCode);
+
+    fetch('/translation-handler', {
+      method: 'POST',
+      body: params
+    }).then(response => response.text())
+    .then((translatedMessage) => {
+      resultContainer.innerText = translatedMessage;
+    });
+  }

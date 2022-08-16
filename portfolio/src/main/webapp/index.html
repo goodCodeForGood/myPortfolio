@@ -2,18 +2,44 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Sahiti Hibane</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
     <div id="content">
       <h1>Sahiti Hibane</h1>
-      <p>Welcome to my portfolio!</p>
-      <p>I am a rising sophomore at San Jose State University 
+      <!-- <form action="/translation-handler" method="POST"> -->
+        <p>Welcome to my portfolio!</p>
+        <!-- id="text"-->
+        <p>I am a rising sophomore at San Jose State University 
           majoring in Software Engineering. I am passionate about 
           solving world's various problems through the power of 
           technology.</p>
+
+          <div id="translateBox"></div>
+
+          <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'translateBox');
+          }
+          </script>
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        </script>
+          <!-- <select id="language">
+            <option value="en">English</option>
+            <option value="zh">Chinese</option>
+            <option value="es">Spanish</option>
+            <option value="hi">Hindi</option>
+            <option value="ar">Arabic</option>
+          </select>
+      
+          <button onclick="requestTranslation();">Translate</button>
+          <hr/>
+        <div id="result"></div> -->
+
+      <!-- </form> -->
         <img src="/images/my_image.jpeg" />
       <p>Click <a href="/hello">here</a> to see content created by server code.</p>
       <a href="https://www.linkedin.com/in/sahiti-hibane" target="_blank">LinkedIn</a>
@@ -39,7 +65,11 @@
         <textarea name="text-input">Feel free to add a message for me here.</textarea>
         <br/>
         <input type="submit" />
+<<<<<<< HEAD
+      </form>
+=======
     </form>
+>>>>>>> main
 
   </body>
 </html>
